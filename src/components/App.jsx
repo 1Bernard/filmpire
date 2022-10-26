@@ -1,32 +1,9 @@
 import React from 'react';
 import { CssBaseline } from '@mui/material';
-import {
-  createBrowserRouter,
-  RouterProvider,
-  // Route,
-} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import useStyles from './styles';
 import { Actors, MovieInformation, Movies, NavBar, Profile } from '.';
-
-const router = createBrowserRouter([
-  {
-    path: '/movie/:id',
-    element: <MovieInformation />,
-  },
-  {
-    path: '/actors/:id',
-    element: <Actors />,
-  },
-  {
-    path: '/',
-    element: <Movies />,
-  },
-  {
-    path: '/profile/:id',
-    element: <Profile />,
-  },
-]);
 
 const App = () => {
   const classes = useStyles();
@@ -36,7 +13,13 @@ const App = () => {
       <NavBar />
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <RouterProvider router={router} />
+        <Routes>
+          <Route exact path="/" element={<Movies />} />
+          <Route exact path="/approved" element={<Movies />} />
+          <Route exact path="/movie/:id" element={<MovieInformation />} />
+          <Route exact path="/actors/:id" element={<Actors />} />
+          <Route exact path="/profile/:id" element={<Profile />} />
+        </Routes>
       </main>
     </div>
   );
