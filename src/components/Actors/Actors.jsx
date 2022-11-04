@@ -19,7 +19,7 @@ const Actors = () => {
   if (isFetching) {
     return (
       <Box display="flex" justifyContent="center">
-        <CircularProgress Size="7rem" />
+        <CircularProgress size="7rem" />
       </Box>
     );
   }

@@ -15,8 +15,8 @@ const categories = [
   { label: 'Upcoming', value: 'upcoming' },
 ];
 
-const redLogo = 'https://fontmeme.com/permalink/221027/99e1c4c62791bcb7ed3f6bfd2af77841.png';
-const blueLogo = 'https://fontmeme.com/permalink/221027/f8abdb9310386f9410f387912d332ab5.png';
+const redLogo = 'https://fontmeme.com/permalink/221104/624bfeaa7efe09ee0ed803c7ca52a571.png';
+const blueLogo = 'https://fontmeme.com/permalink/221104/b8905a1a79a821b3a52d15556c140832.png';
 
 const Sidebar = ({ setMobileOpen }) => {
   const { genreIdOrCategoryName } = useSelector((state) => state.currentGenreOrCategory);
@@ -30,7 +30,7 @@ const Sidebar = ({ setMobileOpen }) => {
         <img
           className={classes.image}
           src={theme.palette.mode === 'light' ? redLogo : blueLogo}
-          alt="Filmpire logo"
+          alt="Scinifie logo"
         />
       </Link>
       <Divider />
@@ -40,7 +40,7 @@ const Sidebar = ({ setMobileOpen }) => {
           <Link key={value} className={classes.links} to="/">
             <ListItem onClick={() => dispatch(selectGenreOrCategory(value))} button>
               <ListItemIcon>
-                <img src={genreIcons[label.toLowerCase()]} className={classes.genreImages} height={30} />
+                <img src={genreIcons[label.toLowerCase()]} className={classes.genreImage} height={30} />
               </ListItemIcon>
               <ListItemText primary={label} />
             </ListItem>
@@ -58,7 +58,7 @@ const Sidebar = ({ setMobileOpen }) => {
           <Link key={name} className={classes.links} to="/">
             <ListItem onClick={() => dispatch(selectGenreOrCategory(id))} button>
               <ListItemIcon>
-                <img src={genreIcons[name.toLowerCase()]} className={classes.genreImages} height={30} />
+                <img src={genreIcons[name.toLowerCase()]} className={classes.genreImage} height={30} />
               </ListItemIcon>
               <ListItemText primary={name} />
             </ListItem>
